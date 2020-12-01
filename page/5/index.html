@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wasim - blog</title><meta name="author" content="Wasim"><meta name="copyright" content="Wasim"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="Hello,Welcome here 👋">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wasim">
+<meta property="og:url" content="http://example.com/page/5/index.html">
+<meta property="og:site_name" content="Wasim">
+<meta property="og:description" content="Hello,Welcome here 👋">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/24608984.jpg">
+<meta property="article:author" content="Wasim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/24608984.jpg"><link rel="shortcut icon" href="/img/moon.svg"><link rel="canonical" href="http://example.com/page/5/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-12-02 00:20:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/24608984.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">58</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/wallpapper/34.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wasim</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Wasim</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2019/09/01/english/%E6%83%85%E6%80%81%E5%8A%A8%E8%AF%8D/" title="情态动词">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="情态动词"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/09/01/english/%E6%83%85%E6%80%81%E5%8A%A8%E8%AF%8D/" title="情态动词">情态动词</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-08-31T16:00:00.000Z" title="Created 2019-09-01 00:00:00">2019-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/english/">english</a></span></div><div class="content">情态动词情态动词（Modal verbs）本身有一定的词义，表示语气的单词。但是不能独立作谓语，只能和动词原形一起构成谓语。情态动词用在行为动词前，表示说话人对这一动作或状态的看法或主观设想。 情态动词虽然数量不多，但用途广泛，主要有下列： can/could, may/might, must, need, ought to, dare/dared, shall/should, will/would
+冠词内容讲解
+情态动词的一般性用法
+情态动词的推测性用法
+情态动词的虚拟用法
+
+can/could1.表示能力或者客观可能性
+
+Can you finish this work tonight ?你今晚能完成这项工作吗?
+
+2.表示请求和允许。
+
+Can I help you ?
+
+may/might表示请求、可以与允许的情况，might比may的语气更加委婉。may的否定式为mustn’t，但表示不可以、禁止的意思
+
+–May I take the book out of the reading-room? 我可以把书从阅览室拿出来吗–Yes, you may. (No, you mus ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2019/08/30/english/%E5%86%A0%E8%AF%8D/" title="冠词">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="冠词"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/08/30/english/%E5%86%A0%E8%AF%8D/" title="冠词">冠词</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-08-29T16:00:00.000Z" title="Created 2019-08-30 00:00:00">2019-08-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/english/">english</a></span></div><div class="content">冠词冠词(Article)：用在名词前，帮助说明名词，冠词是英语词类中最小的一类，即不定冠词a/an，以及定冠词the。此外也有些特定场合不用冠词，通常称为零冠词。  
+冠词内容讲解
+不定冠词a/an用法
+定冠词the的用法
+零冠词
+
+不定冠词a/ an
+不定冠词a / an用在单数名词的前面;   
+a用在辅音开头的词前面;   
+an用在元音开头的词的前面。   
+
+1.泛指某开一个人或物, 但又不具体说明何人何物
+
+There is a dog  lying on the ground.有一只狗躺在地上。
+
+
+I can see a kite.我能看见一只风筝.
+
+2.表某类人或物，区别在于其他种类
+
+An elephant  is much stronger than a man.大象比人强壮多了（正确）一头大象比一个人强壮（错误）
+
+
+That is a green tea 那是一种绿茶
+
+
+They were caught in a heavy rain.  他们遇上了一场大雨a pleasure / a success/ a failure
+
+3.表示数量，有“一”的意思 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2019/08/30/english/%E5%BD%A2%E5%AE%B9%E8%AF%8D%E5%92%8C%E5%89%AF%E8%AF%8D/" title="形容词和副词">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="形容词和副词"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/08/30/english/%E5%BD%A2%E5%AE%B9%E8%AF%8D%E5%92%8C%E5%89%AF%E8%AF%8D/" title="形容词和副词">形容词和副词</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-08-29T16:00:00.000Z" title="Created 2019-08-30 00:00:00">2019-08-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/english/">english</a></span></div><div class="content">形容词和副词形容词形容词主要用于修饰名词或代词，表示人或事物的特点、性质或状态。
+形容词的作用形容词在句中作定语，表语，宾语补足语和主语或宾语。
+作定语形容词作定语时通常放在它所修饰的名词前面，称为前置定语，被修饰的名词可称为主体词。如：
+
+The company is in a difficult situation.这家公司正处于困难的境地。
+
+
+She is a good student,and she works hard.她是一个好学生，她努力学习。
+
+作表语同名词一样，形容词也可以用在系动词后面作表语，修饰主语或说明主语的情况。如：
+
+This bike is expensive.这辆自行车很贵。
+I am sorry,I’m busy now.对不起，我现在很忙。
+
+形容词的位置单个形容词修饰名词的时候，通常前置。
+
+He lives in a beautiful countryside.
+
+英语单词中something, anything, nothing 等不定代词被形容词修饰时，形容词放在不定代词后面。
+
+I have something important to  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2019/05/02/javaWeb/jdbc/" title="jdbc">     <img class="post_bg" src="/img/wallpapper/46.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jdbc"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/05/02/javaWeb/jdbc/" title="jdbc">jdbc</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-05-01T16:00:00.000Z" title="Created 2019-05-02 00:00:00">2019-05-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaweb/">javaweb</a></span></div><div class="content">概念Java DataBase Connectivity  Java语言操作数据库；
+sun公司定义一套操作所有关系型数据库的接口；各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。
+
+JDBC快速入门步骤：
+
+导入驱动jar包 mysql-connector-java-5.1.37-bin.jar 1.复制mysql-connector-java-5.1.37-bin.jar到项目的libs目录下 2.右键–&gt;Add As Library
+注册驱动
+获取数据库连接对象 Connection
+定义sql
+获取执行sql语句的对象 Statement
+执行sql，接受返回结果
+处理结果
+释放资源
+
+123456789101112131415161718192021222324/** * JDBC快速入门 */public class JdbcDemo1 &#123;    public static void main(String[] args) throws Exception &#123;    ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2019/05/01/javaWeb/tomcat/" title="tomcat">     <img class="post_bg" src="/img/wallpapper/34.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tomcat"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/05/01/javaWeb/tomcat/" title="tomcat">tomcat</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-04-30T16:00:00.000Z" title="Created 2019-05-01 00:00:00">2019-05-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaweb/">javaweb</a></span></div><div class="content">web相关概念回顾软件架构
+12C&#x2F;S：客户端&#x2F;服务器端B&#x2F;S：浏览器&#x2F;服务器端
+
+资源分类
+12341. 静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析	* 如： html,css,JavaScript2. 动态资源:每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器	* 如：jsp,php,asp....
+
+网络通信三要素
+1234561. IP：电子设备(计算机)在网络中的唯一标识。2. 端口：应用程序在计算机中的唯一标识。 0~655363. 传输协议：规定了数据传输的规则	1. 基础协议：		1. tcp:安全协议，三次握手。 速度稍慢		2. udp：不安全协议。 速度快
+
+简介什么是TomcatTomcat是服务器软件，提供一个支持Servlet和JSP运行的容器；Servlet和JSP根据实时需要，产生动态网页内容。
+由于 Tomcat 本身也内含了一个 HTTP 服务器，它也可以被视作一个单独的 Web 服务器。
+
+
+se ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2019/03/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" title="第二章 进程管理">     <img class="post_bg" src="/img/wallpapper/45.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第二章 进程管理"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/03/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" title="第二章 进程管理">第二章 进程管理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-03-03T16:00:00.000Z" title="Created 2019-03-04 00:00:00">2019-03-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">进程的概念、组成、特征知识总览
+进程的概念程序：是静态的，就是个存放在磁盘里的可执行文件，就是一系列的指令集合。
+进程（Process）：是动态的，是程序的一次执行过程
+
+
+同一个程序多个执行会对应多个进程，上图就是一个应用程序，多个进程
+
+进程的组成PCB（进程管理块）
+打开MAC电脑的活动监视器既可以看到PCB相关信息
+
+
+进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位。
+
+进程的资源分配包括的内存，cpu，硬盘，网络等等
+
+程序段，数据段一个进程除了进程控制块(pc)组成外，还包含了程序段，数据段
+
+程序的运行过程
+程序运行前，会先放进内存中；一个程序开始运行时前，需要创建对应的进程，也就要创建对应的PCB。
+
+
+进程实体（进程映像）反应了进程某一个时刻的状态，相当于进程的一个快照；在进程不断运行，进程实体是不断在变化。
+
+进程的特征
+知识回顾
+进程的状态与转换知识总览
+创建态与就绪态
+运行态如果一个进程此时在CPU上运行，那么这个进程处于运行态。CPU会执行该进程对应的程序（执行指令序列）
+
+阻塞态在进程运行的过程中，可能会请求等待某个事件的发生（如等待某种系 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2019/03/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/" title="第一章 操作系统概述">     <img class="post_bg" src="/img/wallpapper/26.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第一章 操作系统概述"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/03/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/" title="第一章 操作系统概述">第一章 操作系统概述</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-03-01T16:00:00.000Z" title="Created 2019-03-02 00:00:00">2019-03-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></span></div><div class="content">操作系统的概念和功能学习操作系统时，首先我们要弄明白什么是系统系统？操作系统能做什么？
+概念操作系统（Operating System，OS）是指控制和管理整个计算机系统的硬件和软件资源，并合理地组织调度计算机的工作和资源的分配，以提供给用户和其他软件方便的接口和环境;它是计算机系统中最基本的系统软件。
+
+1.操作系统是系统资源管理者，对软件和硬件的管理。2.向上层提供方便易用的服务3.是最接近硬件的一层软件
+功能和目标系统作为资源管理者提供的功能主要有四个，处理机管理，存储器管理，文件管理，设备管理。
+
+以上的例子依次用到是系统的文件管理，存储器管理，处理机管理，设备管理。
+向上层提供方便易用的服务安装操作系统后，我们的用户和应用程序不需要直接与硬件打交道
+
+这种封装思想在我们日常生活中也经常被使用;比如说像复杂的汽车结构，设计师会底层复杂的构建隐藏起来，把它封装成一个简单易用的接口，对用户暴露只有方向盘，刹车，油门等，用户不需要关心底层怎么样实现; 操心系统做的事情本质上与这些没有什么区别。
+
+操作系统提供常见的服务
+1.GUI:图形化用户接口(Graphical User Int ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2019/03/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/" title="第一章 计算机概论">     <img class="post_bg" src="/img/wallpapper/7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第一章 计算机概论"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/03/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/" title="第一章 计算机概论">第一章 计算机概论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-03-01T16:00:00.000Z" title="Created 2019-03-02 00:00:00">2019-03-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></span></div><div class="content">计算机硬件的基本组成现在计算机的结构组成主要分为五大部件
+
+输入设备输入设备的主要功能是将程序和数据以机器所能识别和接受的信息形式输入计算机。最常用也最基本的输入设备是键盘，此外还有鼠标、扫描仪、摄像机等。
+输出设备输出设备的任务是将计算机处理的结果以人们所能接受的形式或其他系统所要求的信息形式输出。最常用、最基本的输出设备是显示器、打印机。计算机的输入/输出设备(简称IO设备)是计算机与外界联系的桥梁，是计算机中不可缺少的重要组成部分。
+主存储器存放数据和程序，也是我们说的内存条，为什么要有内存部件？打算比如：你去图书馆查资料时，书都放在书架上，你会拿出几本想看的书，然后找张空的桌子坐下，把书放到桌面上，然后拿出一本放在手上慢慢翻阅，此时你本人就是电脑的CPU，你的手就是CPU内缓存，桌面就是内存，而书架就是硬盘，如果桌面没位置你放书的话，你就得每次来回在书架里拿书，效率大幅降低。
+
+硬盘输出I/O设备
+
+运算器负责算术运算，逻辑运算
+控制器指挥各部件，使程序运行
+认识各个硬件部件这一部分主要讲解各部件的内部细节和运行过程。
+主存储器主存储器 = 存储体 + MAR + MDR
+
+M ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2019/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95/" title="第二章 计算机的运算方法">     <img class="post_bg" src="/img/wallpapper/23.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第二章 计算机的运算方法"></a></div><div class="recent-post-info"><a class="article-title" href="/2019/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95/" title="第二章 计算机的运算方法">第二章 计算机的运算方法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-02-28T16:00:00.000Z" title="Created 2019-03-01 00:00:00">2019-03-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></span></div><div class="content">数制、编码和3种校验码进位计数制十进制的计数法
+
+1个数的1次方等于这个数；一个数（0除外）的0次方等于1 。
+
+
+任何进制转换成十进制
+
+r为进制数，如二进制r=2，八进制r=8
+
+
+
+二进制符号只有0,1
+八进制符号有0,1,2,3,4,5,6,7
+……….
+
+十进制转任何进制，整数部分除基取余，小数部分乘基取整
+
+
+由于一些小数不能用二进制精准表示，只能取近视值，所以javascript中 0.1+0.2 != 0.3
+
+BCD码
+用4位2进制来表示一位0~9的数字
+
+传输一个十进制数，肯定要先转成二进制，如果用传统的除二取余和乘二取整进行真实的转化，设计起来太复杂，如果单纯为了传输而不需要对数字进行加减等处理的话，搞个四位对一位的编码最省力，很容易用一个四输入一输出的编码器电路实现，传过去之后再用译码器转成十进制就行了。
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2018/11/02/java/05-%E6%95%B0%E7%BB%84/" title="05-数组">     <img class="post_bg" src="/img/wallpapper/9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="05-数组"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/11/02/java/05-%E6%95%B0%E7%BB%84/" title="05-数组">05-数组</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2018-11-01T16:00:00.000Z" title="Created 2018-11-02 00:00:00">2018-11-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/java%E5%9F%BA%E7%A1%80/">java基础</a></span></div><div class="content">数组今日内容
+数组概念 
+数组的定义  
+数组的索引
+数组内存 
+数组的遍历
+数组的最大值获取
+数组反转
+数组作为方法参数和返回值  学习目标
+ 理解容器的概念
+ 掌握数组的第一种定义方式
+ 掌握数组的第二种定义方式
+ 掌握数组的第三种定义方式
+ 使用索引访问数组的元素
+ 了解数组的内存图解
+ 了解空指针和越界异常
+ 掌握数组的遍历
+ 掌握数组最大值的获取
+ 了解数组反转的原理
+ 了解数组作为方法参数传递
+ 了解数组作为方法的返回值  
+
+数组定义和访问容器概述案例分析现在需要统计某公司员工的工资情况，例如计算平均工资、找到最高工资等。假设该公司有50名员工，用前面所学的知识，程序首先需要声明50个变量来分别记住每位员工的工资，然后在进行操作，这样做会显得很麻烦，而且错误率也会很高。因此我们可以使用容器进行操作。将所有的数据全部存储到一个容器中，统一操作
+容器概念
+容器： 是将多个数据存储到一起，每个数据称为该容器的元素。 
+生活中的容器： 水杯，衣柜，教室  
+
+数组概念数组概念： 数组就是存储数据长度固定的容器，保证多个数据的数据类型要一致。 
+数组的定义方式一1数组存储的数据类型 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/24608984.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wasim</div><div class="author-info__description">Hello,Welcome here 👋</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">58</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LIANGWEIBIAO"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part13-Sentinel%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99/" title="Part13-Sentinel服务容错"><img src="/img/wallpapper/31.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part13-Sentinel服务容错"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part13-Sentinel%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99/" title="Part13-Sentinel服务容错">Part13-Sentinel服务容错</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part02-Mybatis-Plus/" title="Part02-Mybatis-Plus"><img src="/img/wallpapper/21.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part02-Mybatis-Plus"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part02-Mybatis-Plus/" title="Part02-Mybatis-Plus">Part02-Mybatis-Plus</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part34-Gateway%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/" title="Part34-Gateway微服务网关"><img src="/img/wallpapper/31.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part34-Gateway微服务网关"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part34-Gateway%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/" title="Part34-Gateway微服务网关">Part34-Gateway微服务网关</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part33-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/" title="Part33-微信支付"><img src="/img/wallpapper/16.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part33-微信支付"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part33-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/" title="Part33-微信支付">Part33-微信支付</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part32-%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83/" title="Part32-个人中心"><img src="/img/wallpapper/42.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part32-个人中心"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part32-%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83/" title="Part32-个人中心">Part32-个人中心</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>Categories</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/english/"><span class="card-category-list-name">english</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/javaweb/"><span class="card-category-list-name">javaweb</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">java基础</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/mysql/"><span class="card-category-list-name">mysql</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">计算机基础</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><span class="card-category-list-name">计算机组成原理</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/"><span class="card-category-list-name">谷粒学院</span><span class="card-category-list-count">37</span></a></li>
+            
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/english/" style="font-size: 1.42em; color: #99a6b7">english</a> <a href="/tags/java/" style="font-size: 1.34em; color: #99a3b0">java</a> <a href="/tags/jdbc/" style="font-size: 1.1em; color: #999">jdbc</a> <a href="/tags/mysql/" style="font-size: 1.26em; color: #999fa8">mysql</a> <a href="/tags/tomcat/" style="font-size: 1.1em; color: #999">tomcat</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.18em; color: #999ca1">操作系统</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 1.1em; color: #999">编码</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 1.18em; color: #999ca1">计算机组成原理</a> <a href="/tags/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/" style="font-size: 1.5em; color: #99a9bf">谷粒学院</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">June 2020</span><span class="card-archive-list-count">37</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/09/"><span class="card-archive-list-date">September 2019</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/08/"><span class="card-archive-list-date">August 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/05/"><span class="card-archive-list-date">May 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/03/"><span class="card-archive-list-date">March 2019</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/11/"><span class="card-archive-list-date">November 2018</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/10/"><span class="card-archive-list-date">October 2018</span><span class="card-archive-list-count">7</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">58</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-12-01T16:20:48.663Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wasim</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "今日事&#44;今日毕,Never put off till tomorrow what you can do today".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: false,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '今日事&#44;今日毕'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

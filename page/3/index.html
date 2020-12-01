@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wasim - blog</title><meta name="author" content="Wasim"><meta name="copyright" content="Wasim"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="Hello,Welcome here 👋">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wasim">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="Wasim">
+<meta property="og:description" content="Hello,Welcome here 👋">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/24608984.jpg">
+<meta property="article:author" content="Wasim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/24608984.jpg"><link rel="shortcut icon" href="/img/moon.svg"><link rel="canonical" href="http://example.com/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-12-02 00:20:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/24608984.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">58</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/wallpapper/34.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wasim</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Wasim</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part04-%E8%AF%BE%E7%A8%8B%E4%B8%AD%E5%BF%83%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="Part04-课程中心微服务">     <img class="post_bg" src="/img/wallpapper/15.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part04-课程中心微服务"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part04-%E8%AF%BE%E7%A8%8B%E4%B8%AD%E5%BF%83%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="Part04-课程中心微服务">Part04-课程中心微服务</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">数据库设计数据库创建数据库：guli_edu
+数据表执行sql脚本guli_edu.sql
+数据库设计规约本项目参考《阿里巴巴Java开发手册》
+MP代码生成器创建代码生成器service_edu的test目录中创建代码生成器
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172package com.atguigu.guli.service.edu;public class CodeGenerator &#123;    @Test    public void genCode() &#123;        String prefix = &quot;dbxxx_&quot;;        String moduleName = &quot;edu&quot;;        // 1、创建代码生成器        AutoGenerator mpg = new A ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part06-%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86(%E4%B8%80)/" title="Part06-前端知识(一)">     <img class="post_bg" src="/img/wallpapper/37.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part06-前端知识(一)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part06-%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86(%E4%B8%80)/" title="Part06-前端知识(一)">Part06-前端知识(一)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">Vue入门基本数据渲染和指令双向数据绑定事件修饰符条件渲染列表渲染实例生命周期axios入门</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part26-%E9%A6%96%E9%A1%B5%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E5%92%8CRedis/" title="Part26-首页数据展示和Redis">     <img class="post_bg" src="/img/wallpapper/18.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part26-首页数据展示和Redis"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part26-%E9%A6%96%E9%A1%B5%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E5%92%8CRedis/" title="Part26-首页数据展示和Redis">Part26-首页数据展示和Redis</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">幻灯片数据展示后端控制层：ApiAdController
+12345678910111213141516171819package com.atguigu.guli.service.cms.controller.api;@CrossOrigin //解决跨域问题@Api(description = &quot;广告推荐&quot;)@RestController@RequestMapping(&quot;/api/cms/ad&quot;)public class ApiAdController &#123;    @Autowired    private AdService adService;    @ApiOperation(&quot;根据推荐位id显示广告推荐&quot;)    @GetMapping(&quot;list/&#123;adTypeId&#125;&quot;)    public R listByAdTypeId(@ApiParam(value = &quot;推荐位id&quot;, required = true) @PathVariable Str ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part07-%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86(%E4%BA%8C)/" title="Part06-前端知识(二)">     <img class="post_bg" src="/img/wallpapper/10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part06-前端知识(二)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part07-%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86(%E4%BA%8C)/" title="Part06-前端知识(二)">Part06-前端知识(二)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">临时登录接口前端登录问题默认情况下，前端项目已经实现了登录功能，后端连接到远程Mock平台的模拟数据接口进行登录，而Mock平台地址无效，导致前端的登录功能无法执行
+
+Mock登录接口我们暂时将请求切换到本地Mock数据的接口中，使系统可以进行模拟登录，以便进行后续的开发工作
+修改前端接口配置在 config/dev.env.js 中修改BASE_API
+注意：这个文件修改后需要重启前端服务器
+1BASE_API: &#39;&quot;http:&#x2F;&#x2F;127.0.0.1:8110&quot;&#39;
+
+前端登录接口文件src/api/login.js，可以在这个文件中分析后端Mock数据的接口的url地址：
+
+登录：/user/login
+登出：/user/info
+获取用户信息：/user/logout
+
+后端接口文件暂时在service_edu微服务中创建LoginController，模拟上面三个接口
+123456789101112131415161718192021222324252627282930313233343536package com.atgu ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part09-%E9%98%BF%E9%87%8C%E4%BA%91OSS/" title="Part09-阿里云OSS">     <img class="post_bg" src="/img/wallpapper/15.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part09-阿里云OSS"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part09-%E9%98%BF%E9%87%8C%E4%BA%91OSS/" title="Part09-阿里云OSS">Part09-阿里云OSS</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">为了解决海量数据存储与弹性扩容，项目中我们采用云存储的解决方案- 阿里云OSS。 
+开通“对象存储OSS”服务申请阿里云账号实名认证开通“对象存储OSS”服务
+
+进入管理控制台控制台使用创建Bucket命名：guli-file
+读写权限：公共读
+
+上传默认头像创建文件夹avatar，上传默认的用户头像 default.jpg
+
+使用RAM子用户进入子用户管理页面
+
+添加用户
+获取子用户keyAccessKeyId, AccessKeySecret
+
+设置用户权限AliyunOSSFullAccess
+
+搜索oss，添加AliyunOSSFullAccess权限
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part08-%E8%AE%B2%E5%B8%88%E7%AE%A1%E7%90%86%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" title="Part08-讲师管理前端开发">     <img class="post_bg" src="/img/wallpapper/3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part08-讲师管理前端开发"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part08-%E8%AE%B2%E5%B8%88%E7%AE%A1%E7%90%86%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" title="Part08-讲师管理前端开发">Part08-讲师管理前端开发</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">讲师管理前端开发项目开发流程
+定义路由模块src/router/index.js配置讲师管理相关路由
+定义api模块创建文件 src/api/teacher.js
+123456789101112// @ 符号在build/webpack.base.conf.js 中配置 表示 &#x27;src&#x27; 路径import request from &#x27;@/utils/request&#x27;export default &#123;  list() &#123;    return request(&#123;      url: &#x27;/admin/edu/teacher/list&#x27;,      method: &#x27;get&#x27;    &#125;)  &#125;&#125;
+
+
+
+定义页面组件脚本src/views/teacher/list.vue
+1234567891011121314151617181920212223242526&lt;script&gt;import teacherApi from &#x27;@/api/tea ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part10-%E8%AE%B2%E5%B8%88%E5%A4%B4%E5%83%8F%E4%B8%8A%E4%BC%A0/" title="Part10-讲师头像上传">     <img class="post_bg" src="/img/wallpapper/44.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part10-讲师头像上传"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part10-%E8%AE%B2%E5%B8%88%E5%A4%B4%E5%83%8F%E4%B8%8A%E4%BC%A0/" title="Part10-讲师头像上传">Part10-讲师头像上传</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">创建OSS微服务创建模块Artifact：service_oss
+配置检查一下guli_parent中的aliyun-sdk-oss的版本，切换到3.8.0
+123456789&lt;dependencies&gt;    &lt;!--aliyunOSS--&gt;    &lt;dependency&gt;        &lt;groupId&gt;com.aliyun.oss&lt;/groupId&gt;        &lt;artifactId&gt;aliyun-sdk-oss&lt;/artifactId&gt;    &lt;/dependency&gt;    &lt;/dependencies&gt;
+
+配置application12345678910111213141516server:  port: 8120 # 服务端口spring:  profiles:    active: dev # 环境设置  application:    name: service-oss # 服务名aliyun:  oss:    endpoint: 你的endponit   ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part11-%E8%A1%A5%E5%85%85%E5%8A%9F%E8%83%BD/" title="Part11-补充功能">     <img class="post_bg" src="/img/wallpapper/25.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part11-补充功能"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part11-%E8%A1%A5%E5%85%85%E5%8A%9F%E8%83%BD/" title="Part11-补充功能">Part11-补充功能</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">补充功能批量删除讲师后台接口TeacherController
+123456789101112@ApiOperation(&quot;根据id列表删除讲师&quot;)@DeleteMapping(&quot;batch-remove&quot;)public R removeRows(    @ApiParam(value = &quot;讲师id列表&quot;, required = true)    @RequestBody List&lt;String&gt; idList)&#123;    boolean result = teacherService.removeByIds(idList);    if(result)&#123;        return R.ok().message(&quot;删除成功&quot;);    &#125;else&#123;        return R.error().message(&quot;数据不存在&quot;);    &#125;&#125;
+
+测试Json列表数据格式
+
+前端定义请求接口teacher.js
+12 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part12-Nacos%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E5%92%8C%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/" title="Part12-Nacos注册中心和服务调用">     <img class="post_bg" src="/img/wallpapper/23.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part12-Nacos注册中心和服务调用"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part12-Nacos%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E5%92%8C%E6%9C%8D%E5%8A%A1%E8%B0%83%E7%94%A8/" title="Part12-Nacos注册中心和服务调用">Part12-Nacos注册中心和服务调用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">一、版本选择在guli_parent中确认以下依赖的版本
+springboot
+123456&lt;parent&gt;    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;    &lt;version&gt;2.2.2.RELEASE&lt;/version&gt;    &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;&lt;/parent&gt;
+
+Spring Cloud
+1234567&lt;dependency&gt;    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;    &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;    &lt;version ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part27-%E9%98%BF%E9%87%8C%E4%BA%91%E7%9F%AD%E4%BF%A1%E5%92%8C%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C/" title="Part27-阿里云短信和用户注册">     <img class="post_bg" src="/img/wallpapper/19.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part27-阿里云短信和用户注册"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part27-%E9%98%BF%E9%87%8C%E4%BA%91%E7%9F%AD%E4%BF%A1%E5%92%8C%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C/" title="Part27-阿里云短信和用户注册">Part27-阿里云短信和用户注册</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">一、阿里云短信服务1.1 搜索开通短信服务
+
+1.2 添加签名
+1.3 添加模板
+
+1.4 安全设置
+1.5 为子账户添加授权AliyunDysmsFullAccess
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/24608984.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wasim</div><div class="author-info__description">Hello,Welcome here 👋</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">58</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LIANGWEIBIAO"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part13-Sentinel%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99/" title="Part13-Sentinel服务容错"><img src="/img/wallpapper/31.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part13-Sentinel服务容错"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part13-Sentinel%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99/" title="Part13-Sentinel服务容错">Part13-Sentinel服务容错</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part02-Mybatis-Plus/" title="Part02-Mybatis-Plus"><img src="/img/wallpapper/21.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part02-Mybatis-Plus"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part02-Mybatis-Plus/" title="Part02-Mybatis-Plus">Part02-Mybatis-Plus</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part34-Gateway%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/" title="Part34-Gateway微服务网关"><img src="/img/wallpapper/31.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part34-Gateway微服务网关"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part34-Gateway%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/" title="Part34-Gateway微服务网关">Part34-Gateway微服务网关</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part33-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/" title="Part33-微信支付"><img src="/img/wallpapper/16.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part33-微信支付"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part33-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/" title="Part33-微信支付">Part33-微信支付</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part32-%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83/" title="Part32-个人中心"><img src="/img/wallpapper/42.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part32-个人中心"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part32-%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83/" title="Part32-个人中心">Part32-个人中心</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>Categories</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/english/"><span class="card-category-list-name">english</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/javaweb/"><span class="card-category-list-name">javaweb</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">java基础</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/mysql/"><span class="card-category-list-name">mysql</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">计算机基础</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><span class="card-category-list-name">计算机组成原理</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/"><span class="card-category-list-name">谷粒学院</span><span class="card-category-list-count">37</span></a></li>
+            
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/english/" style="font-size: 1.42em; color: #99a6b7">english</a> <a href="/tags/java/" style="font-size: 1.34em; color: #99a3b0">java</a> <a href="/tags/jdbc/" style="font-size: 1.1em; color: #999">jdbc</a> <a href="/tags/mysql/" style="font-size: 1.26em; color: #999fa8">mysql</a> <a href="/tags/tomcat/" style="font-size: 1.1em; color: #999">tomcat</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.18em; color: #999ca1">操作系统</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 1.1em; color: #999">编码</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 1.18em; color: #999ca1">计算机组成原理</a> <a href="/tags/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/" style="font-size: 1.5em; color: #99a9bf">谷粒学院</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">June 2020</span><span class="card-archive-list-count">37</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/09/"><span class="card-archive-list-date">September 2019</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/08/"><span class="card-archive-list-date">August 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/05/"><span class="card-archive-list-date">May 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/03/"><span class="card-archive-list-date">March 2019</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/11/"><span class="card-archive-list-date">November 2018</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/10/"><span class="card-archive-list-date">October 2018</span><span class="card-archive-list-count">7</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">58</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-12-01T16:20:48.663Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wasim</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "今日事&#44;今日毕,Never put off till tomorrow what you can do today".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: false,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '今日事&#44;今日毕'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

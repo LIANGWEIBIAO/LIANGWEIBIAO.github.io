@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wasim - blog</title><meta name="author" content="Wasim"><meta name="copyright" content="Wasim"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="Hello,Welcome here 👋">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wasim">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Wasim">
+<meta property="og:description" content="Hello,Welcome here 👋">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/24608984.jpg">
+<meta property="article:author" content="Wasim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/24608984.jpg"><link rel="shortcut icon" href="/img/moon.svg"><link rel="canonical" href="http://example.com/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-12-02 00:20:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/24608984.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">58</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/wallpapper/34.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wasim</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Wasim</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part16-%E8%AF%BE%E7%A8%8B%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89/" title="Part16-课程管理（一）">     <img class="post_bg" src="/img/wallpapper/34.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part16-课程管理（一）"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part16-%E8%AF%BE%E7%A8%8B%E7%AE%A1%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89/" title="Part16-课程管理（一）">Part16-课程管理（一）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">一、需求说明发布新课步骤一：编辑课程基本信息
+
+步骤二：添加课时和章节
+
+添加章节
+
+添加课时
+
+步骤三：课程发布预览
+
+课程列表
+二、课程发布表单-步骤导航2.1 配置路由添加vue组件
+
+添加路由
+123456789101112131415161718192021222324252627282930313233343536// 课程管理  &#123;    path: &#x27;/course&#x27;,    component: Layout,    redirect: &#x27;/course/list&#x27;,    name: &#x27;Course&#x27;,    meta: &#123; title: &#x27;课程管理&#x27; &#125;,    children: [      &#123;        path: &#x27;list&#x27;,        name: &#x27;CourseList&#x27;,        component: () =&gt; import(&#x27;@/views/course/li ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part37-Nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" title="Part37-Nacos配置中心">     <img class="post_bg" src="/img/wallpapper/28.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part37-Nacos配置中心"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part37-Nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" title="Part37-Nacos配置中心">Part37-Nacos配置中心</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">配置中心配置中心介绍微服务架构下关于配置文件的问题：
+（1）配置文件相对分散
+在一个微服务架构下，配置文件会随着微服务的增多变的越来越多，而且分散在各个微服务中，不好统一配置和管理。
+（2）配置文件无法区分环境
+微服务项目可能会有多个环境，例如：测试环境、预发布环境、生产环境。每一个环境所使用的配置理论上都是不同的，一旦需要修改，就需要我们去各个微服务下手动维护，这比较困难。
+（3）配置文件无法实时更新
+我们修改了配置文件之后，必须重新启动微服务才能使配置生效，这对一个正在运行的项目来说非常不友好。
+配置中心的思路是：
+
+首先把项目中各种配置全部都放到一个集中的地方进行统一管理，并提供一套标准的接口。
+服务需要获取配置的时候，就来配置中心的接口拉取自己的配置。
+配置中心参数有更新时，能够通知到微服务实时同步最新的配置信息，使之动态更新。
+
+常见配置中心NacosSpingCloud alibaba技术栈中的一个组件，前面我们已经使用它做过服务注册中心。其实它也集成了服务配置的功能，我们可以直接使用它作为服务配置中心。
+SpringCloud ConﬁgSpring Cloud的配置中心 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part05-%E9%9D%9E%E4%B8%9A%E5%8A%A1%E5%8A%9F%E8%83%BD%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/" title="Part05-非业务功能统一处理">     <img class="post_bg" src="/img/wallpapper/17.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part05-非业务功能统一处理"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part05-%E9%9D%9E%E4%B8%9A%E5%8A%A1%E5%8A%9F%E8%83%BD%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/" title="Part05-非业务功能统一处理">Part05-非业务功能统一处理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">统一返回结果统一返回数据格式项目中我们会将响应封装成json返回，一般我们会将所有接口的数据格式统一， 使前端(iOS Android, Web)对数据的操作更一致、轻松。
+一般情况下，统一返回数据格式没有固定的格式，只要能描述清楚返回的数据状态以及要返回的具体数据就可以。但是一般会包含状态码、返回消息、数据这几部分内容
+例如，我们的系统要求返回的基本数据格式如下：
+1234567891011121314&#123;  &quot;success&quot;: true,  &quot;code&quot;: 20000,  &quot;message&quot;: &quot;成功&quot;,  &quot;data&quot;: &#123;    &quot;items&quot;: [      &#123;        &quot;id&quot;: &quot;1&quot;,        &quot;name&quot;: &quot;刘德华&quot;,        &quot;intro&quot;: &quot;毕业于师范大学数学系，热爱教育事业，执教数学思 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part36-ECharts%E5%9B%BE%E8%A1%A8/" title="Part36-ECharts图表">     <img class="post_bg" src="/img/wallpapper/27.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part36-ECharts图表"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part36-ECharts%E5%9B%BE%E8%A1%A8/" title="Part36-ECharts图表">Part36-ECharts图表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">一、ECharts的使用1.1 五分钟入门ECharts1.1.1 简介ECahrs是百度的一个项目，用于图表展示，提供了常规的折线图、柱状图、散点图、饼图、K线图，用于统计的盒形图，用于地理数据可视化的地图、热力图、线图，用于关系数据可视化的关系图、treemap、旭日图，多维数据可视化的平行坐标，还有用于 BI 的漏斗图，仪表盘，并且支持图与图之间的混搭。
+官方网站：https://echarts.baidu.com
+1.1.2 基本使用入门参考：官网-&gt;文档-&gt;教程-&gt;5分钟上手ECharts
+（1）创建html页面：柱图.html
+（2）引入ECharts
+12&lt;!-- 引入 ECharts 文件 --&gt;&lt;script src=&quot;echarts.min.js&quot;&gt;&lt;/script&gt;
+
+（3）定义图表区域
+12&lt;!-- 为ECharts准备一个具备大小（宽高）的Dom --&gt;&lt;div id=&quot;main&quot; style=&quot;width: 600px;height:40 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part35-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%92%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" title="Part35-数据统计和定时任务">     <img class="post_bg" src="/img/wallpapper/45.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part35-数据统计和定时任务"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part35-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%92%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" title="Part35-数据统计和定时任务">Part35-数据统计和定时任务</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">一、需求1.1 页面需求1.1.1 生成统计结果
+1.1.2 展示统计信息
+二、用户注册统计1.1 用户注册统计使用QueryWrapper查询出的用户是非逻辑删除的用户，这里我们想统计所有的用户，因此使用Mapper
+1.1.1 mapper接口：MemberMapper
+1Integer selectRegisterNumByDay(String day);
+
+映射文件：MemberMapper.xml
+12345&lt;select id=&quot;selectRegisterNumByDay&quot; resultType=&quot;java.lang.Integer&quot;&gt;    SELECT COUNT(1)    FROM ucenter_member    WHERE DATE(gmt_create) = #&#123;day&#125;&lt;/select&gt;
+
+1.1.2 service接口：MemberService
+1Integer countRegisterNum(String day);
+
+实现类：MemberServiceImpl
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part31-%E8%AE%A2%E5%8D%95/" title="Part31-订单">     <img class="post_bg" src="/img/wallpapper/17.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part31-订单"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part31-%E8%AE%A2%E5%8D%95/" title="Part31-订单">Part31-订单</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">一、创建交易微服务1.1 数据库创建数据库：guli_trade执行sql脚本：guli_trade.sql
+由于交易模块与教学模块、会员模块是不同的服务模块和不同数据库，所以我们在订单表冗余了课程与会员相关的表字段，这样有利于数据库表查询效率。支付成功后我们会把支付平台返回的数据全部记录，并且更新订单状态。
+1.2 创建交易微服务课程分为免费观看与付费观看，如果是付费观看的课程，会员需下单支付后才可以观看
+1.2.1 创建模块service_trade
+1.2.2 配置pom123456789101112&lt;build&gt;    &lt;!-- 项目打包时会将java目录中的*.xml文件也进行打包 --&gt;    &lt;resources&gt;        &lt;resource&gt;            &lt;directory&gt;src/main/java&lt;/directory&gt;            &lt;includes&gt;                &lt;include&gt;**/*.xml&lt;/include& ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part29-%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" title="Part29-用户认证">     <img class="post_bg" src="/img/wallpapper/17.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part29-用户认证"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part29-%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/" title="Part29-用户认证">Part29-用户认证</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">一、用户认证1.1 准备1.1.1 引入依赖common-util中引入jwt依赖
+1234567891011&lt;dependencies&gt;    &lt;dependency&gt;        &lt;groupId&gt;io.jsonwebtoken&lt;/groupId&gt;        &lt;artifactId&gt;jjwt&lt;/artifactId&gt;    &lt;/dependency&gt;    &lt;dependency&gt;        &lt;groupId&gt;joda-time&lt;/groupId&gt;        &lt;artifactId&gt;joda-time&lt;/artifactId&gt;    &lt;/dependency&gt;&lt;/dependencies&gt;
+
+1.1.2 引入工具类common-util中引入工具类：JwtUtils.java、JwtInfo.java
+1.2 用户登录接口1.2.1 定义LoginVoservice_ucenter中定义vo
+12345 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part28-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%89%E5%85%A8-%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C/" title="Part28-微服务安全-访问令牌">     <img class="post_bg" src="/img/wallpapper/40.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part28-微服务安全-访问令牌"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part28-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%89%E5%85%A8-%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C/" title="Part28-微服务安全-访问令牌">Part28-微服务安全-访问令牌</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">单点登录用户身份认证
+一般流程如下：
+
+用户向服务器发送用户名和密码。
+验证服务器后，相关数据（如用户名，用户角色等）将保存在当前会话（session）中。
+服务器向用户返回session_id，session信息都会写入到用户的Cookie。
+用户的每个后续请求都将通过在Cookie中取出session_id传给服务器。
+服务器收到session_id并对比之前保存的数据，确认用户的身份。
+
+缺点：
+
+单点性能压力，无法扩展。
+分布式架构中，需要session共享方案，session共享方案存在性能瓶颈。
+
+SSO（Single Sign On）模式
+分布式，SSO(single sign on)模式：单点登录英文全称Single Sign On，简称就是SSO。它的解释是：在多个应用系统中，只需要登录一次，就可以访问其他相互信任的应用系统。
+
+如图所示，图中有3个系统，分别是业务A、业务B、和SSO。
+业务A、业务B没有登录模块。
+而SSO只有登录模块，没有其他的业务模块。
+
+一般过程如下：
+
+当业务A、业务B需要登录时，将跳到SSO系统。
+SSO从用户信息数据库中获取用户信息并校 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part01-%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/" title="Part01-项目简介">     <img class="post_bg" src="/img/wallpapper/24.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part01-项目简介"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part01-%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/" title="Part01-项目简介">Part01-项目简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">什么是在线教育在线教育即e-Learning，或称远程教育、在线学习，现行概念中一般指的是一种基于网络的学习行为，与网络培训概念相似。
+八种商业模式B2C模式Business To Customer 会员模式，商家到用户，这种模式是自己制作大量自有版权的视频，放在自有平台上。 这种模式简单，快速，只要专心录制大量视频即可快速发展。但在中国由于版权保护意识不强，教育内容易于复制，有海量的免费资源的竞争对手众多等原因，难以取得像样的现金流。
+代表网站：谷粒学院
+C2C模式Consumer To Consumer 平台模式 用户到用户，这种模式本质是将自己的流量或者用户转卖给视频或者直播的内容提供者，通过出售内容分成获利。平台模式避开了非常沉重的内容和服务，扩张迅速。
+代表网站：51cto
+B2B2C商家到商家到用户，平台链接第三方教育机构和用户，平台一般不直接提供课程内容，而是更多承担教育的互联网载体角色，为教学过程各个环节提供全方位支持和服务。
+B2B2C是C2C模式的更全面、更完整的表现形式
+代表网站： 腾讯课堂
+1 对 1让一个讲师在一定时间内对一个学员进行辅导，学生按照时间支付费用 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part03-%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Part03-项目环境搭建">     <img class="post_bg" src="/img/wallpapper/17.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part03-项目环境搭建"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part03-%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Part03-项目环境搭建">Part03-项目环境搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/">谷粒学院</a></span></div><div class="content">工程结构
+guli_parent：根目录（父工程），管理四个子模块：
+canal_client：canal数据库表同步模块（统计同步数据）
+common：公共模块父节点
+common_util：工具类模块，所有模块都可以依赖于它
+service_base：service服务的base包，包含service服务的公共配置类，所有service模块依赖于它
+spring_security：认证与授权模块，需要认证授权的service服务依赖于它
+
+
+infrastructure：基础服务模块父节点
+api_gateway：api网关服务
+
+
+service：api接口服务父节点
+service_edu：教学相关api接口服务
+service_oss：阿里云oss api接口服务
+service_acl：用户权限管理api接口服务（用户管理、角色管理和权限管理等）
+service_cms：cms api接口服务
+service_sms：短信api接口服务
+service_trade：订单和支付相关api接口服务
+service_statistics：统计报表api接口服务
+service_u ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/24608984.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wasim</div><div class="author-info__description">Hello,Welcome here 👋</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">58</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LIANGWEIBIAO"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part13-Sentinel%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99/" title="Part13-Sentinel服务容错"><img src="/img/wallpapper/31.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part13-Sentinel服务容错"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part13-Sentinel%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99/" title="Part13-Sentinel服务容错">Part13-Sentinel服务容错</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part02-Mybatis-Plus/" title="Part02-Mybatis-Plus"><img src="/img/wallpapper/21.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part02-Mybatis-Plus"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part02-Mybatis-Plus/" title="Part02-Mybatis-Plus">Part02-Mybatis-Plus</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part34-Gateway%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/" title="Part34-Gateway微服务网关"><img src="/img/wallpapper/31.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part34-Gateway微服务网关"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part34-Gateway%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/" title="Part34-Gateway微服务网关">Part34-Gateway微服务网关</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part33-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/" title="Part33-微信支付"><img src="/img/wallpapper/16.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part33-微信支付"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part33-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98/" title="Part33-微信支付">Part33-微信支付</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part32-%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83/" title="Part32-个人中心"><img src="/img/wallpapper/42.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part32-个人中心"/></a><div class="content"><a class="title" href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part32-%E4%B8%AA%E4%BA%BA%E4%B8%AD%E5%BF%83/" title="Part32-个人中心">Part32-个人中心</a><time datetime="2020-05-31T16:00:00.000Z" title="Created 2020-06-01 00:00:00">2020-06-01</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>Categories</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/english/"><span class="card-category-list-name">english</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/javaweb/"><span class="card-category-list-name">javaweb</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">java基础</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/mysql/"><span class="card-category-list-name">mysql</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">计算机基础</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><span class="card-category-list-name">计算机组成原理</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/"><span class="card-category-list-name">谷粒学院</span><span class="card-category-list-count">37</span></a></li>
+            
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/english/" style="font-size: 1.42em; color: #99a6b7">english</a> <a href="/tags/java/" style="font-size: 1.34em; color: #99a3b0">java</a> <a href="/tags/jdbc/" style="font-size: 1.1em; color: #999">jdbc</a> <a href="/tags/mysql/" style="font-size: 1.26em; color: #999fa8">mysql</a> <a href="/tags/tomcat/" style="font-size: 1.1em; color: #999">tomcat</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.18em; color: #999ca1">操作系统</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 1.1em; color: #999">编码</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 1.18em; color: #999ca1">计算机组成原理</a> <a href="/tags/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/" style="font-size: 1.5em; color: #99a9bf">谷粒学院</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">June 2020</span><span class="card-archive-list-count">37</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/09/"><span class="card-archive-list-date">September 2019</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/08/"><span class="card-archive-list-date">August 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/05/"><span class="card-archive-list-date">May 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/03/"><span class="card-archive-list-date">March 2019</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/11/"><span class="card-archive-list-date">November 2018</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2018/10/"><span class="card-archive-list-date">October 2018</span><span class="card-archive-list-count">7</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">58</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-12-01T16:20:48.663Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wasim</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "今日事&#44;今日毕,Never put off till tomorrow what you can do today".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: false,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '今日事&#44;今日毕'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
