@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BEM | Wasim</title><meta name="keywords" content="css"><meta name="author" content="Wasim"><meta name="copyright" content="Wasim"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="简介BEM 分别代表着：Block（块）、Element（元素）、Modifier（修饰符），是一种组件化的 CSS 命名方法和规范，由俄罗斯 Yandex 团队所提出。其目的是将用户界面划分成独立的（模）块，使开发更为简单和快速，利于团队协作开发。 特点  组件化&#x2F;模块化的开发思路。 书写方式解耦化，不会造成命名空间的污染，如：.xxx ul li 写法带来的潜在嵌套风险。 命名方式化扁平，避免">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BEM">
+<meta property="og:url" content="https://liangweibiao.github.io/2020/06/02/css/BEM/index.html">
+<meta property="og:site_name" content="Wasim">
+<meta property="og:description" content="简介BEM 分别代表着：Block（块）、Element（元素）、Modifier（修饰符），是一种组件化的 CSS 命名方法和规范，由俄罗斯 Yandex 团队所提出。其目的是将用户界面划分成独立的（模）块，使开发更为简单和快速，利于团队协作开发。 特点  组件化&#x2F;模块化的开发思路。 书写方式解耦化，不会造成命名空间的污染，如：.xxx ul li 写法带来的潜在嵌套风险。 命名方式化扁平，避免">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/2.jpg">
+<meta property="article:published_time" content="2020-06-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-11T20:19:50.510Z">
+<meta property="article:author" content="Wasim">
+<meta property="article:tag" content="css">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/2.jpg"><link rel="shortcut icon" href="/img/moon.svg"><link rel="canonical" href="https://liangweibiao.github.io/2020/06/02/css/BEM/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-12-12 04:19:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">81</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">16</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://gitee.com/liangweibiao/hexo-img/raw/master/deer/2.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wasim</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">BEM</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-06-01T16:00:00.000Z" title="Created 2020-06-02 00:00:00">2020-06-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2020-12-11T20:19:50.510Z" title="Updated 2020-12-12 04:19:50">2020-12-12</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>BEM 分别代表着：Block（块）、Element（元素）、Modifier（修饰符），是一种组件化的 CSS 命名方法和规范，由俄罗斯 Yandex 团队所提出。其目的是将用户界面划分成独立的（模）块，使开发更为简单和快速，利于团队协作开发。</p>
+<p>特点</p>
+<ul>
+<li>组件化/模块化的开发思路。</li>
+<li>书写方式解耦化，不会造成命名空间的污染，如：<code>.xxx ul li</code> 写法带来的潜在嵌套风险。</li>
+<li>命名方式化扁平，避免样式层级过多而导致的解析效率降低，渲染开销变大。</li>
+<li>组件结构独立化，减少样式冲突，可以将已开完成的组件快速应用到新项目中。</li>
+<li>有着较好的维护性、易读性、灵活性。</li>
+</ul>
+<h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.[Block 块]__[Element 元素]--[Modifier 修饰符]</span><br></pre></td></tr></table></figure>
+
+<p>类<code>block__element--modifier</code>形式，block与element之间通过2个’_’连接，element与modifier之间通过2个’-‘连接，block为多个单词时，单词与单词之间通过1个’-‘连接，element, modifier同样处理。</p>
+<h2 id="Block（块）"><a href="#Block（块）" class="headerlink" title="Block（块）"></a>Block（块）</h2><p>是一个独立的实体，即通常所说的模块或组件。</p>
+<blockquote>
+<p>例：<code>header</code>、<code>menu</code>、<code>search</code></p>
+</blockquote>
+<h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><ul>
+<li>块名需能清晰的表达出，其用途、功能或意义，具有唯一性。</li>
+<li>块名称之间用<code>-</code>连接。</li>
+<li>每个块名前应增加一个前缀，这前缀在 CSS 中有命名空间（如：<code>m-</code>、<code>u-</code>、分别代表：<code>mod 模块</code>、<code>ui 元件</code>）。</li>
+<li>每个块在逻辑上和功能上都相互独立。</li>
+<li>由于块是独立的，可以在应用开发中进行复用，从而降低代码重复并提高开发效率。</li>
+<li>块可以放置在页面上的任何位置，也可以互相嵌套。</li>
+<li>同类型的块，在显示上可能会有一定的差异，所以不要定义过多的外观显示样式，主要负责结构的呈现。</li>
+<li>这样就能确保块在不同地方复用和嵌套时，增加其扩展性。</li>
+</ul>
+<p>综上所述，最终我们可以把<code>BEM</code>规则最终定义成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.[命名空间]-[组件名&#x2F;块]__[元素名&#x2F;元素]--[修饰符]</span><br></pre></td></tr></table></figure>
+
+<h3 id="情景"><a href="#情景" class="headerlink" title="情景"></a>情景</h3><p>需要构建一个 <code>search</code> 组件。</p>
+<h3 id="写法"><a href="#写法" class="headerlink" title="写法"></a>写法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.m-search</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- header 组件（m- 作为命名空间始终） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;m-header&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- search 组件（可以嵌套在其他组件内） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;m-search&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果打算开发一套框架，可以使用具有代表性的缩写，用来表示命名空间：Element UI(el-)、Ant Design(ant-)、iView(ivu-)。</p>
+</blockquote>
+<h2 id="Element（元素）"><a href="#Element（元素）" class="headerlink" title="Element（元素）"></a>Element（元素）</h2><p>是块中的组成部分，对应块中的子元素/子节点。</p>
+<blockquote>
+<p>例：<code>header</code>、<code>title</code>、<code>menu item</code>、<code>list item</code></p>
+</blockquote>
+<h3 id="规则-1"><a href="#规则-1" class="headerlink" title="规则"></a>规则</h3><ul>
+<li>元素名需能简单的描述出，其结构、布局或意义，并且在语义上与块相关联。</li>
+<li>块与元素之间用<code>__</code>连接。</li>
+<li>不能与块分开单独使用。</li>
+<li>块的内部元素，都被认为是块的子元素。</li>
+<li>一个块中元素的类名必须用父级块的名称作为前缀，因此不能写成：<code>block__elem1__elem2</code>。</li>
+</ul>
+<h3 id="情景-1"><a href="#情景-1" class="headerlink" title="情景"></a>情景</h3><p><code>search</code> 组件中包含 <code>input</code> 和 <code>button</code>，是列表中的一个子元素。</p>
+<h3 id="写法-1"><a href="#写法-1" class="headerlink" title="写法"></a>写法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.m-search</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-search__input</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-search__button</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="结构-1"><a href="#结构-1" class="headerlink" title="结构"></a>结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- search 组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;m-search&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- input 是 search 组件的子元素 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;m-search__input&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- button 是 search 组件的子元素 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;m-search__button&quot;</span>&gt;</span>Search<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Modifier（修饰符）"><a href="#Modifier（修饰符）" class="headerlink" title="Modifier（修饰符）"></a>Modifier（修饰符）</h2><p>定义块和元素的外观、状态或类型。</p>
+<blockquote>
+<p>例：<code>color</code>、<code>disabled</code>、<code>size</code></p>
+</blockquote>
+<h3 id="规则-2"><a href="#规则-2" class="headerlink" title="规则"></a>规则</h3><ul>
+<li>修饰符需能直观易懂表达出，其外观、状态或行为。</li>
+<li>修饰符用<code>_</code>连接块与元素。</li>
+<li>修饰符不能单独使用。</li>
+<li>在必要时可进行扩展，书写成：<code>block__elem_modifier_modifier</code>，第一个<code>modifier</code>表示其命名空间。</li>
+</ul>
+<h3 id="情景-2"><a href="#情景-2" class="headerlink" title="情景"></a>情景</h3><p>假定 <code>search</code> 组件有多种外观，我们选择其中一种。并且在用户未输入内容时，<code>button</code> 显示为禁用样式。</p>
+<h3 id="写法-2"><a href="#写法-2" class="headerlink" title="写法"></a>写法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.m-search</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-search_dark</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-search__input</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-search__button</span>&#123;&#125;</span><br><span class="line"><span class="selector-class">.m-search__button_disabled</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="结构-2"><a href="#结构-2" class="headerlink" title="结构"></a>结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- dark 表明 search 组件的外观 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;m-search m-search-form_dark&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;m-search__input&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- disabled 表明 search__button 的状态 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;m-search__button m-search__button_disabled&quot;</span>&gt;</span>Search<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="嵌套关系"><a href="#嵌套关系" class="headerlink" title="嵌套关系"></a>嵌套关系</h2><ul>
+<li>元素之间可以彼此嵌套</li>
+<li>你可以拥有任意层次的嵌套级别</li>
+<li>一个元素总是一个模块的一部分，而不是另一个元素的一部分，这意味着元素的名称不能被定义为 <code>block__elem1__elem2 </code>这样的层次结构。</li>
+</ul>
+<p>例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">     正确的。完整的元素名的结构符合如下模式：</span></span><br><span class="line"><span class="comment">     &#x27;block-name__element-name&#x27;</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;search-form&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;search-form__content&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;search-form__input&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;search-form__button&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">     不正确的。完整的元素名的结构不符合如下模式：</span></span><br><span class="line"><span class="comment">     &#x27;block-name__element-name&#x27;</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot;search-form&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;search-form__content&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 推荐：&#x27;search-form__input&#x27; 或者 &#x27;search-form__content-input&#x27; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;search-form__content__input&quot;</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 推荐：&#x27;search-form__button&#x27; 或者 &#x27;search-form__content-button&#x27; --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;search-form__content__button&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果在模块名称上定义了命名空间，也要保证元素名称是依赖于模块的（block_elem）。  </p>
+<p>在 DOM 树中，一个模块可以有元素嵌套结构</p>
+<p>例子:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;block&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;block_elem1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;block_elem2&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;block_elem3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然而，在 BEM 的方法论中，这样的模块结构通常表示为一个并列的元素列表</p>
+<p>例子:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block_elem1</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block_elem2</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block_elem3</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样在代码中，你可以在不改变每个单独的元素的情况下改变一个模块的 DOM 结构</p>
+<p>例子:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;block&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;block_elem1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;block_elem1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;block_elem3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>模块的结构改变了，但是元素的规则和他们的名字仍然保持不变。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>很多人觉得 <code>BEM</code> 写法难看，审美本是“智者见智，仁者见仁”的事。刚刚接触可能是会觉得有点奇怪，但所有东西都有一个适应过程。如果仅仅为了好看，规避其优点，我认为得不偿失。个人建议可以尝试使用 <code>BEM</code> 规范来书写代码。</p>
+<p><code>BEM</code> 命名会使得 Class 类名变长，但经过 <code>GZIP</code> 等压缩后，文件的体积其实并无太大影响。</p>
+<p>就和早年提出 <code>CSS语义化</code> 一样，不要为了语义而去语义，语义化本身的作用就是帮助大家更好的识别代码，所有的规范都是基于项目的发展和团队的协作，团队可以根据成员的意愿选择最合适的方式。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Wasim</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://liangweibiao.github.io/2020/06/02/css/BEM/">https://liangweibiao.github.io/2020/06/02/css/BEM/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="http://codelwb.top">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/06/02/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part02-Mybatis-Plus/"><img class="prev-cover" src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/41.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Part02-Mybatis-Plus</div></div></a></div><div class="next-post pull-right"><a href="/2020/06/01/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part01-%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/"><img class="next-cover" src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/13.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Part01-项目简介</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wasim</div><div class="author-info__description">Hello,Welcome here 👋</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">81</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">16</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LIANGWEIBIAO"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">2.</span> <span class="toc-text">命名规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Block%EF%BC%88%E5%9D%97%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">Block（块）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-number">3.1.</span> <span class="toc-text">规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%85%E6%99%AF"><span class="toc-number">3.2.</span> <span class="toc-text">情景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E6%B3%95"><span class="toc-number">3.3.</span> <span class="toc-text">写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">3.4.</span> <span class="toc-text">结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Element%EF%BC%88%E5%85%83%E7%B4%A0%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">Element（元素）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E5%88%99-1"><span class="toc-number">4.1.</span> <span class="toc-text">规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%85%E6%99%AF-1"><span class="toc-number">4.2.</span> <span class="toc-text">情景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E6%B3%95-1"><span class="toc-number">4.3.</span> <span class="toc-text">写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84-1"><span class="toc-number">4.4.</span> <span class="toc-text">结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modifier%EF%BC%88%E4%BF%AE%E9%A5%B0%E7%AC%A6%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">Modifier（修饰符）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E5%88%99-2"><span class="toc-number">5.1.</span> <span class="toc-text">规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%85%E6%99%AF-2"><span class="toc-number">5.2.</span> <span class="toc-text">情景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E6%B3%95-2"><span class="toc-number">5.3.</span> <span class="toc-text">写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84-2"><span class="toc-number">5.4.</span> <span class="toc-text">结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%85%B3%E7%B3%BB"><span class="toc-number">6.</span> <span class="toc-text">嵌套关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">7.</span> <span class="toc-text">小结</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/07/15/java/%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E7%9A%84%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="基于角色的权限控制"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/13.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于角色的权限控制"/></a><div class="content"><a class="title" href="/2020/07/15/java/%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E7%9A%84%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="基于角色的权限控制">基于角色的权限控制</a><time datetime="2020-07-14T16:00:00.000Z" title="Created 2020-07-15 00:00:00">2020-07-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/09/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part37-Nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" title="Part37-Nacos配置中心"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/19.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part37-Nacos配置中心"/></a><div class="content"><a class="title" href="/2020/07/09/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part37-Nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" title="Part37-Nacos配置中心">Part37-Nacos配置中心</a><time datetime="2020-07-08T16:00:00.000Z" title="Created 2020-07-09 00:00:00">2020-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/08/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part36-ECharts%E5%9B%BE%E8%A1%A8/" title="Part36-ECharts图表"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/35.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part36-ECharts图表"/></a><div class="content"><a class="title" href="/2020/07/08/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part36-ECharts%E5%9B%BE%E8%A1%A8/" title="Part36-ECharts图表">Part36-ECharts图表</a><time datetime="2020-07-07T16:00:00.000Z" title="Created 2020-07-08 00:00:00">2020-07-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/07/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part35-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%92%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" title="Part35-数据统计和定时任务"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/44.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part35-数据统计和定时任务"/></a><div class="content"><a class="title" href="/2020/07/07/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part35-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%92%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" title="Part35-数据统计和定时任务">Part35-数据统计和定时任务</a><time datetime="2020-07-06T16:00:00.000Z" title="Created 2020-07-07 00:00:00">2020-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/06/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part34-Gateway%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/" title="Part34-Gateway微服务网关"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/21.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part34-Gateway微服务网关"/></a><div class="content"><a class="title" href="/2020/07/06/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part34-Gateway%E5%BE%AE%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/" title="Part34-Gateway微服务网关">Part34-Gateway微服务网关</a><time datetime="2020-07-05T16:00:00.000Z" title="Created 2020-07-06 00:00:00">2020-07-06</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2016 - 2020 By Wasim</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'T40hF307933miUsoEVfnqAYq-gzGzoHsz',
+      appKey: 'lWHf2qtxjEMeGhyP5eMLEOHY',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
