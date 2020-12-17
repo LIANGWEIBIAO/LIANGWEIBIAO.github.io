@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>call和apply方法使用 | Wasim</title><meta name="keywords" content="javaScript"><meta name="author" content="Wasim"><meta name="copyright" content="Wasim"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="call概述JS中函数调用共有四种方法。call()就是其中一种。我先简单的的说明以下四种方法：  第一种，也就是最常见的调用方法:  12345function test()&amp;#123;    &#x2F;**do something**&#x2F;&amp;#125;test();   第二种：对象调用  我们需要把定义的函数放到一个对象里面 1234567var obj&#x3D;&amp;#123;    test:function">
+<meta property="og:type" content="article">
+<meta property="og:title" content="call和apply方法使用">
+<meta property="og:url" content="https://liangweibiao.github.io/2019/05/02/javaScript/call%E5%92%8Capply/index.html">
+<meta property="og:site_name" content="Wasim">
+<meta property="og:description" content="call概述JS中函数调用共有四种方法。call()就是其中一种。我先简单的的说明以下四种方法：  第一种，也就是最常见的调用方法:  12345function test()&amp;#123;    &#x2F;**do something**&#x2F;&amp;#125;test();   第二种：对象调用  我们需要把定义的函数放到一个对象里面 1234567var obj&#x3D;&amp;#123;    test:function">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/37.jpg">
+<meta property="article:published_time" content="2019-05-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-17T03:16:59.001Z">
+<meta property="article:author" content="Wasim">
+<meta property="article:tag" content="javaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/37.jpg"><link rel="shortcut icon" href="/img/moon.svg"><link rel="canonical" href="https://liangweibiao.github.io/2019/05/02/javaScript/call%E5%92%8Capply/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-12-17 11:16:59'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">86</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://gitee.com/liangweibiao/hexo-img/raw/master/deer/37.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wasim</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">call和apply方法使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2019-05-01T16:00:00.000Z" title="Created 2019-05-02 00:00:00">2019-05-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2020-12-17T03:16:59.001Z" title="Updated 2020-12-17 11:16:59">2020-12-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/javaScript/">javaScript</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="call"><a href="#call" class="headerlink" title="call"></a>call</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>JS中函数<strong>调用</strong>共有四种方法。<code>call()</code>就是其中一种。我先简单的的说明以下四种方法：</p>
+<ul>
+<li>第一种，也就是最常见的调用方法:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">/**do something**/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第二种：对象调用</li>
+</ul>
+<p>我们需要把定义的函数放到一个对象里面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj=&#123;</span><br><span class="line">    test:<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">/**do something**/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.test();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第三种：构造函数调用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tmp = <span class="keyword">new</span> test();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第四种：使用<code>call()</code>或者<code>applay()</code></li>
+</ul>
+<p>这种方法调用的时候必须传递一个参数，只要不空着即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">/**do something**/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test.call(<span class="keyword">null</span>)</span><br></pre></td></tr></table></figure>
+
+<p>其实，以上调用方式，隐含的传递了一个变量<code>this</code>,而**call()的作用，恰恰就是改变这个作用域(this)**。也就是call(null)中必须的那个参数成为了新的this。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>.call(thisObj[, arg1[, arg2[, [,...argN]]]]);</span><br></pre></td></tr></table></figure>
+
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.name = <span class="string">&quot;window&quot;</span>;</span><br><span class="line"></span><br><span class="line">obj = &#123;</span><br><span class="line">    name : <span class="string">&quot;zhangsan&quot;</span>,</span><br><span class="line">    age : <span class="number">25</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say2</span>(<span class="params">s1,s2</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;和是:&quot;</span> + (s1+s2));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行say方法，say函数里面的this指向window</span></span><br><span class="line">say.call(<span class="built_in">window</span>);       <span class="comment">//window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//执行say方法，say函数里面的this指向obj</span></span><br><span class="line">say.call(obj);          <span class="comment">//zhangsan</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//执行say2方法，say2函数里面的this指向window</span></span><br><span class="line">say2.call(<span class="built_in">window</span>,<span class="number">1</span>,<span class="number">2</span>);  <span class="comment">//和是3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>在 JavaScript 里使用 <code>typeof </code>来判断数据类型，只能区分基本类型，即 <code>number</code>，<code>string</code>，<code>undefined</code>，<code>boolean</code>，<code>object</code>，<code>function</code>，<code>ymbol (ES6新增)七种</code>s。</p>
+<p>但是<strong>对于数组、null、对象来说，其关系错综复杂，使用 typeof 都会统一返回 <code>object</code> 字符串。</strong></p>
+<p>Object.prototype对象上的toString方法可以用来判断数据类型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//直接对一个数组调用toString()</span></span><br><span class="line">arr.toString();<span class="comment">// &quot;1,2&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//通过call指定arr数组为Object.prototype对象中的toString方法的上下文</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(arr); <span class="comment">//&quot;[object Array]&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>数组对象继承并且重写<code>object原型</code>的<code>toString</code>方法，会返回转换后字符串，如果我们把数据对象this重新指向object原型上就可以用来精确判断数据类型了</p>
+<h2 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h2><p>apply和call的功能是一样的，只是传入的参数列表形式不同</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>.apply(thisObj[, argArray])</span><br></pre></td></tr></table></figure>
+
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = &#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">3</span>&#125;; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">c, d</span>)</span>&#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.a + <span class="built_in">this</span>.b + c + d; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">add.call(num, <span class="number">5</span>, <span class="number">7</span>); <span class="comment">// 1 + 3 + 5 + 7 = 16 </span></span><br><span class="line">add.apply(num, [<span class="number">5</span>, <span class="number">7</span>]); <span class="comment">// 1 + 3 + 5 + 7 = 16</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><h3 id="call的实现原理"><a href="#call的实现原理" class="headerlink" title="call的实现原理"></a>call的实现原理</h3><p>试想当调用 call 的时候，也就是类似于</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">    value: <span class="number">1</span>,</span><br><span class="line">    bar: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.value)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">foo.bar() <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p>这样就把 this 指向到了 foo 上，但是这样给 foo 对象加了一个属性，有些瑕疵，不过不要紧，执行完删除这个属性就可以完美实现了。</p>
+<p>也就是说步骤可以是这样：</p>
+<ol>
+<li>将函数设为对象的属性</li>
+<li>执行这个函数</li>
+<li>删除这个函数</li>
+</ol>
+<p>下面就试着去实现一下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.call2 = <span class="function"><span class="keyword">function</span> (<span class="params">...values</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> obj = values[<span class="number">0</span>] <span class="comment">//要指向的对象</span></span><br><span class="line"></span><br><span class="line">    obj.fn = <span class="built_in">this</span>; <span class="comment">// 往对象里面添加要执行的函数,此时的 this = bar</span></span><br><span class="line"></span><br><span class="line">    values.splice(<span class="number">0</span>,<span class="number">1</span>) </span><br><span class="line"></span><br><span class="line">    obj.fn(...values); <span class="comment">//执行函数，函数this执行obj</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">   value: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(name)</span><br><span class="line">   <span class="built_in">console</span>.log(age)</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="built_in">this</span>.value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar.call2(foo, <span class="string">&#x27;black&#x27;</span>, <span class="string">&#x27;18&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="apply的实现原理"><a href="#apply的实现原理" class="headerlink" title="apply的实现原理"></a>apply的实现原理</h3><p><code>apply</code>的方法和 <code>call</code> 方法的实现类似，只不过是如果有参数，以数组形式进行传递，直接上代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.apply2 = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> context = context || <span class="built_in">window</span></span><br><span class="line">    context.fn = <span class="built_in">this</span> <span class="comment">// this 也就是调用apply的函数</span></span><br><span class="line">    <span class="keyword">var</span> result</span><br><span class="line">    <span class="comment">// 判断是否有第二个参数</span></span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params"><span class="built_in">arguments</span>[<span class="number">1</span>]</span>)</span> &#123;</span><br><span class="line">        result = context.fn(...arguments[<span class="number">1</span>])</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result = context.fn()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">delete</span> context.fn()</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">    value: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name)</span><br><span class="line">    <span class="built_in">console</span>.log(age)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar.apply2(foo, [<span class="string">&#x27;black&#x27;</span>, <span class="string">&#x27;18&#x27;</span>]) <span class="comment">// black 18 1</span></span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Wasim</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://liangweibiao.github.io/2019/05/02/javaScript/call%E5%92%8Capply/">https://liangweibiao.github.io/2019/05/02/javaScript/call%E5%92%8Capply/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="http://codelwb.top">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/05/02/javaWeb/jdbc/"><img class="prev-cover" src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/47.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">jdbc</div></div></a></div><div class="next-post pull-right"><a href="/2019/05/01/javaWeb/tomcat/"><img class="next-cover" src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/40.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">tomcat</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wasim</div><div class="author-info__description">Hello,Welcome here 👋</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">86</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LIANGWEIBIAO"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#call"><span class="toc-number">1.</span> <span class="toc-text">call</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.3.</span> <span class="toc-text">示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text">应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#apply"><span class="toc-number">2.</span> <span class="toc-text">apply</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-1"><span class="toc-number">2.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">2.2.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#call%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">call的实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apply%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">3.2.</span> <span class="toc-text">apply的实现原理</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/08/05/javaScript/proxy%E4%B8%8Ereflect/" title="Proxy与Reflect"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/29.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Proxy与Reflect"/></a><div class="content"><a class="title" href="/2020/08/05/javaScript/proxy%E4%B8%8Ereflect/" title="Proxy与Reflect">Proxy与Reflect</a><time datetime="2020-08-04T16:00:00.000Z" title="Created 2020-08-05 00:00:00">2020-08-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/08/04/javaScript/typeScript/" title="TypeScript常用语法"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/27.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript常用语法"/></a><div class="content"><a class="title" href="/2020/08/04/javaScript/typeScript/" title="TypeScript常用语法">TypeScript常用语法</a><time datetime="2020-08-03T16:00:00.000Z" title="Created 2020-08-04 00:00:00">2020-08-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/15/java/%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E7%9A%84%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="基于角色的权限控制"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/13.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于角色的权限控制"/></a><div class="content"><a class="title" href="/2020/07/15/java/%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E7%9A%84%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="基于角色的权限控制">基于角色的权限控制</a><time datetime="2020-07-14T16:00:00.000Z" title="Created 2020-07-15 00:00:00">2020-07-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/09/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part37-Nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" title="Part37-Nacos配置中心"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/19.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part37-Nacos配置中心"/></a><div class="content"><a class="title" href="/2020/07/09/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part37-Nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" title="Part37-Nacos配置中心">Part37-Nacos配置中心</a><time datetime="2020-07-08T16:00:00.000Z" title="Created 2020-07-09 00:00:00">2020-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/08/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part36-ECharts%E5%9B%BE%E8%A1%A8/" title="Part36-ECharts图表"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/35.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part36-ECharts图表"/></a><div class="content"><a class="title" href="/2020/07/08/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part36-ECharts%E5%9B%BE%E8%A1%A8/" title="Part36-ECharts图表">Part36-ECharts图表</a><time datetime="2020-07-07T16:00:00.000Z" title="Created 2020-07-08 00:00:00">2020-07-08</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2016 - 2020 By Wasim</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'T40hF307933miUsoEVfnqAYq-gzGzoHsz',
+      appKey: 'lWHf2qtxjEMeGhyP5eMLEOHY',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
