@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wasim - blog</title><meta name="author" content="Wasim"><meta name="copyright" content="Wasim"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="Hello,Welcome here 👋">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wasim">
+<meta property="og:url" content="https://liangweibiao.github.io/page/12/index.html">
+<meta property="og:site_name" content="Wasim">
+<meta property="og:description" content="Hello,Welcome here 👋">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://liangweibiao.github.io/img/avatar/avatar.png">
+<meta property="article:author" content="Wasim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liangweibiao.github.io/img/avatar/avatar.png"><link rel="shortcut icon" href="/img/moon.svg"><link rel="canonical" href="https://liangweibiao.github.io/page/12/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-03-14 23:19:59'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">114</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">18</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://gitee.com/liangweibiao/hexo-img/raw/master/wallhaven-y8739l_.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wasim</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Wasim</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2018/05/02/javaScript/javaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/" title="javaScript原型和原型链">     <img class="post_bg" src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/40.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaScript原型和原型链"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/05/02/javaScript/javaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/" title="javaScript原型和原型链">javaScript原型和原型链</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2018-05-01T16:00:00.000Z" title="Created 2018-05-02 00:00:00">2018-05-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaScript/">javaScript</a></span></div><div class="content">与大部分面向对象语言不同，ES6之前中并没有引入类（class）的概念，JavaScript并非通过类而是直接通过构造函数来创建实例。在介绍原型和原型链之前，我们有必要先复习一下构造函数的知识。
+构造函数构造函数就是一个普通的函数，创建方式和普通函数没有区别，不同的是构造函数习惯上首字母大写。另外就是调用方式的不同，普通函数是直接调用，而构造函数需要使用new关键字来调用。
+123456function Person() &#123;&#125;var person = new Person();person.name = &#x27;Kevin&#x27;;console.log(person.name) // Kevin
+
+在这个例子中，Person 就是一个构造函数，我们使用 new 创建了一个实例对象 person。
+prototype在JavaScript中，每个函数都有一个prototype属性，这个属性指向一个对象，我们把这个对象称之为原型对象，该原型对象包含了由该构造函数的所有实例共享的属性和方法。
+让我们用一张图表示构造函数和实例原型之间的关系：
+
+proto每一个J ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2018/05/02/javaScript/javaScript%E7%BB%A7%E6%89%BF%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/" title="javaScript继承的几种方式">     <img class="post_bg" src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/19.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaScript继承的几种方式"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/05/02/javaScript/javaScript%E7%BB%A7%E6%89%BF%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/" title="javaScript继承的几种方式">javaScript继承的几种方式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2018-05-01T16:00:00.000Z" title="Created 2018-05-02 00:00:00">2018-05-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaScript/">javaScript</a></span></div><div class="content">既然要实现继承，那么首先我们得有一个父类，代码如下：
+12345678910111213// 定义一个动物类function Animal (name) &#123;  // 属性  this.name = name || &#x27;Animal&#x27;;  // 实例方法  this.sleep = function()&#123;    console.log(this.name + &#x27;正在睡觉！&#x27;);  &#125;&#125;// 原型方法Animal.prototype.eat = function(food) &#123;  console.log(this.name + &#x27;正在吃：&#x27; + food);&#125;;
+
+原型链继承核心： 将父类的实例作为子类的原型，方法更常见，使用prototype属性。
+123456789101112function Cat()&#123; &#125;Cat.prototype = new Animal();Cat.prototype.name = &#x27;cat&#x27;; //　T ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2018/05/02/javaScript/javaScript%E9%97%AD%E5%8C%85/" title="javaScript闭包">     <img class="post_bg" src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaScript闭包"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/05/02/javaScript/javaScript%E9%97%AD%E5%8C%85/" title="javaScript闭包">javaScript闭包</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2018-05-01T16:00:00.000Z" title="Created 2018-05-02 00:00:00">2018-05-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaScript/">javaScript</a></span></div><div class="content">闭包闭包就是能够读取其他函数内部变量的函数。例如在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成“定义在一个函数内部的函数“。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
+闭包的用途闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。
+12345678910111213141516171819202122function f1()&#123;　　　var n=  999;　　　nAdd = function()&#123;       n+=1     &#125;　　　function f2()&#123;　　　　　　alert(n);　　　&#125;　　　return f2;&#125;var result = f1();result(); // 999nAdd();result(); // 1000
+
+在这段代码中，result实际上就是闭包f2函数。它一共运行了两次，第一次的值是999，第二次的值是1000。这证明了，函数f1中的局部变量n一直保存在内存中，并没有 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2018/05/02/javaScript/javaScript%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/" title="javaScript作用域与作用域链">     <img class="post_bg" src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/13.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaScript作用域与作用域链"></a></div><div class="recent-post-info"><a class="article-title" href="/2018/05/02/javaScript/javaScript%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/" title="javaScript作用域与作用域链">javaScript作用域与作用域链</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2018-05-01T16:00:00.000Z" title="Created 2018-05-02 00:00:00">2018-05-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaScript/">javaScript</a></span></div><div class="content">作用域任何程序设计语言都有作用域的概念，简单的说，作用域就是变量与函数的可访问范围，在JavaScript中，变量的作用域有全局作用域和局部作用域两种。
+全局作用域： 
+最外层函数定义的变量拥有全局作用域，Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。。
+1234567var authorName=&quot;山边小溪&quot;;function fn()&#123;    console.log(authorName);&#125;fn();//山边小溪
+
+局部作用域： 
+和全局作用域相反，在函数外部自然无法读取函数内的局部变量。
+12345function doSomething() &#123;   var blogName = &quot;梦想天空&quot;;&#125;console.log(blogName); //脚本错误
+
+需要注意的是，函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！
+12345function doSomething() &#123;    blogName = &quot;梦想天 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/11/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wasim</div><div class="author-info__description">Hello,Welcome here 👋</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">114</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">18</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LIANGWEIBIAO"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/08/05/javaScript/proxy%E4%B8%8Ereflect/" title="Proxy与Reflect"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/29.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Proxy与Reflect"/></a><div class="content"><a class="title" href="/2020/08/05/javaScript/proxy%E4%B8%8Ereflect/" title="Proxy与Reflect">Proxy与Reflect</a><time datetime="2020-08-04T16:00:00.000Z" title="Created 2020-08-05 00:00:00">2020-08-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/08/04/javaScript/typeScript/" title="TypeScript常用语法"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/27.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript常用语法"/></a><div class="content"><a class="title" href="/2020/08/04/javaScript/typeScript/" title="TypeScript常用语法">TypeScript常用语法</a><time datetime="2020-08-03T16:00:00.000Z" title="Created 2020-08-04 00:00:00">2020-08-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/15/java/%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E7%9A%84%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="基于角色的权限控制"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/13.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于角色的权限控制"/></a><div class="content"><a class="title" href="/2020/07/15/java/%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E7%9A%84%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="基于角色的权限控制">基于角色的权限控制</a><time datetime="2020-07-14T16:00:00.000Z" title="Created 2020-07-15 00:00:00">2020-07-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/09/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part37-Nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" title="Part37-Nacos配置中心"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part37-Nacos配置中心"/></a><div class="content"><a class="title" href="/2020/07/09/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part37-Nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" title="Part37-Nacos配置中心">Part37-Nacos配置中心</a><time datetime="2020-07-08T16:00:00.000Z" title="Created 2020-07-09 00:00:00">2020-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/08/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part36-ECharts%E5%9B%BE%E8%A1%A8/" title="Part36-ECharts图表"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/45.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part36-ECharts图表"/></a><div class="content"><a class="title" href="/2020/07/08/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part36-ECharts%E5%9B%BE%E8%A1%A8/" title="Part36-ECharts图表">Part36-ECharts图表</a><time datetime="2020-07-07T16:00:00.000Z" title="Created 2020-07-08 00:00:00">2020-07-08</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>Categories</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/javaScript/"><span class="card-category-list-name">javaScript</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/javaweb/"><span class="card-category-list-name">javaweb</span><span class="card-category-list-count">13</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java%E5%9F%BA%E7%A1%80/"><span class="card-category-list-name">java基础</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/mysql/"><span class="card-category-list-name">mysql</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">操作系统</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><span class="card-category-list-name">计算机组成原理</span><span class="card-category-list-count">2</span></a></li>
+            
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/css/" style="font-size: 1.1em; color: #999">css</a> <a href="/tags/english/" style="font-size: 1.33em; color: #99a2af">english</a> <a href="/tags/es6/" style="font-size: 1.27em; color: #99a0a9">es6</a> <a href="/tags/git/" style="font-size: 1.27em; color: #99a0a9">git</a> <a href="/tags/java/" style="font-size: 1.44em; color: #99a7ba">java</a> <a href="/tags/javaScript/" style="font-size: 1.39em; color: #99a4b4">javaScript</a> <a href="/tags/jdbc/" style="font-size: 1.27em; color: #99a0a9">jdbc</a> <a href="/tags/maven/" style="font-size: 1.21em; color: #999ea4">maven</a> <a href="/tags/mysql/" style="font-size: 1.21em; color: #999ea4">mysql</a> <a href="/tags/react/" style="font-size: 1.21em; color: #999ea4">react</a> <a href="/tags/spring/" style="font-size: 1.33em; color: #99a2af">spring</a> <a href="/tags/typeScript/" style="font-size: 1.1em; color: #999">typeScript</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.27em; color: #99a0a9">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" style="font-size: 1.1em; color: #999">数据库连接池</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 1.1em; color: #999">计算机基础</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" style="font-size: 1.16em; color: #999b9e">计算机组成原理</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.21em; color: #999ea4">设计模式</a> <a href="/tags/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/" style="font-size: 1.5em; color: #99a9bf">谷粒学院</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">August 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">July 2020</span><span class="card-archive-list-count">10</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">June 2020</span><span class="card-archive-list-count">30</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">April 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">February 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/01/"><span class="card-archive-list-date">January 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/09/"><span class="card-archive-list-date">September 2019</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/08/"><span class="card-archive-list-date">August 2019</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives/">
+              <span>More</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">114</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-03-14T15:19:58.118Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2021 By Wasim</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "今日事&#44;今日毕,Never put off till tomorrow what you can do today".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: false,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '今日事&#44;今日毕'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script>(function(){
+  const bp = document.createElement('script');
+  const curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https'){
+  bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  bp.dataset.pjax = ''
+  const s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})()</script></div></body></html>

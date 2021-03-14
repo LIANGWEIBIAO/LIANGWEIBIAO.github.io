@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>创建者模式 | Wasim</title><meta name="keywords" content="设计模式"><meta name="author" content="Wasim"><meta name="copyright" content="Wasim"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="从定义，角色，类图，使用场景，现时生活中的场景，解决问题，来学习设计模式 单例定义： 单例（Singleton）模式的定义：指一个类只有一个实例，且该类能自行创建这个实例的一种模式 1.饿汉式 12345678910111213public class Person &amp;#123;    &#x2F;&#x2F;1.私有构造方法    private Person()&amp;#123;            &amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建者模式">
+<meta property="og:url" content="https://liangweibiao.github.io/2020/04/02/java/%E5%88%9B%E5%BB%BA%E8%80%85%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Wasim">
+<meta property="og:description" content="从定义，角色，类图，使用场景，现时生活中的场景，解决问题，来学习设计模式 单例定义： 单例（Singleton）模式的定义：指一个类只有一个实例，且该类能自行创建这个实例的一种模式 1.饿汉式 12345678910111213public class Person &amp;#123;    &#x2F;&#x2F;1.私有构造方法    private Person()&amp;#123;            &amp;#125;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/9.jpg">
+<meta property="article:published_time" content="2020-04-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-25T23:58:38.100Z">
+<meta property="article:author" content="Wasim">
+<meta property="article:tag" content="设计模式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/9.jpg"><link rel="shortcut icon" href="/img/moon.svg"><link rel="canonical" href="https://liangweibiao.github.io/2020/04/02/java/%E5%88%9B%E5%BB%BA%E8%80%85%E6%A8%A1%E5%BC%8F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-01-26 07:58:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">114</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">18</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://gitee.com/liangweibiao/hexo-img/raw/master/deer/9.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wasim</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">创建者模式</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-04-01T16:00:00.000Z" title="Created 2020-04-02 00:00:00">2020-04-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-01-25T23:58:38.100Z" title="Updated 2021-01-26 07:58:38">2021-01-26</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>从定义，角色，类图，使用场景，现时生活中的场景，解决问题，来学习设计模式</p>
+<h2 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h2><p><strong>定义：</strong></p>
+<p>单例（Singleton）模式的定义：指一个类只有一个实例，且该类能自行创建这个实例的一种模式</p>
+<p><strong>1.饿汉式</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1.私有构造方法</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//2.在本类中创建实例</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Person person = <span class="keyword">new</span> Person();</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//3.提供一个公共的访问方式，让外界获取该实例</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Person <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">   		 <span class="keyword">return</span> person;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该模式能简单快速的创建一个单例对象，而且是**线程安全的(只在类加载时才会初始化，以后都不会)**。但它有一个缺点，就是不管你要不要都会直接创建一个对象，会消耗一定的性能(当然很小很小，几乎可以忽略不计，所以这种模式在很多场合十分常用而且十分简单)</p>
+<p><strong>2.懒汉式</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">   </span><br><span class="line">    <span class="comment">//1.私有构造方法</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">User</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//2.在本类中创建实例</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> User user; </span><br><span class="line">	</span><br><span class="line">    <span class="comment">//3.提供一个公共的访问方式，让外界获取该实例</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> User <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(user==<span class="keyword">null</span>)&#123;          <span class="comment">//step 1</span></span><br><span class="line">            user = <span class="keyword">new</span> User();   <span class="comment">//step 2</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看上去，这段代码没什么明显问题，但它<strong>不是线程安全的</strong>。假设当前有N个线程同时调用<code>getInstance</code>方法，由于当前还没有对象生成，所以一部分同时都进入step 2,那么就会由多个线程创建多个多个user对象。</p>
+<p>解决办法：使用<code>synchronized</code>关键字。</p>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p>普通创建对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Car car = <span class="keyword">new</span> Car();</span><br></pre></td></tr></table></figure>
+<p>工厂模式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CarFactory carFactory = <span class="keyword">new</span> CarFactory();</span><br><span class="line">Car car = carFactory.getCar();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">CarFactory</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Car <span class="title">getCar</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Car();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="为什么要使用工厂模式"><a href="#为什么要使用工厂模式" class="headerlink" title="为什么要使用工厂模式?"></a>为什么要使用工厂模式?</h3><p>考虑这样一个问题，对于一个Car类，当Car实例被使用的地方很多，则很多地方都会使用new来创建对象，肯定会导致使用A的地方有很多代码重复。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">A类使用Car</span><br><span class="line">Car car = <span class="keyword">new</span> Car()；</span><br><span class="line"></span><br><span class="line">B类使用Car</span><br><span class="line">Car car = <span class="keyword">new</span> Car()；</span><br><span class="line"></span><br><span class="line">C类使用Car</span><br><span class="line">Car car = <span class="keyword">new</span> Car()；</span><br></pre></td></tr></table></figure>
+
+<p>现在需求改变了，需要new Car的时候传入一个参数，这时候ABC类都需要更改，这明显违背的开闭原则。</p>
+<p>如果更把创建对象封装到一个工厂类中，只需要更改工厂类就行了。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lovelion/article/details/7523392">创建对象与使用对象——谈谈工厂的作用</a></p>
+<p><a target="_blank" rel="noopener" href="https://jcoffeezph.top/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.html">Java设计模式之工厂模式</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903608266293255">工厂模式理解了没有？</a></p>
+<h2 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h2><p>在软件开发过程中有时需要创建一个复杂的对象，这个复杂对象通常由多个子部件按一定的步骤组合而成。每一个部件的实现方式可以不一样而组合成不一样的对象。如游戏中的不同角色，其性别、个性、能力、脸型、体型、服装、发型等特性都有所差异；汽车中的方向盘、发动机、车架、轮胎等部件。</p>
+<p>建造者（Builder）模式的定义：指将一个<strong>复杂对象</strong>的<code>构造</code>与它的<code>表示</code>分离，使<strong>同样的构建过程可以创建不同的表示</strong>，这样的设计模式被称为建造者模式。它是将一个复杂的对象分解为多个简单的对象，然后一步一步构建而成。它将变与不变相分离，即产品的组成部分是不变的，但每一部分是可以灵活选择的。</p>
+<p>建造者（Builder）模式的主要角色如下。</p>
+<ol>
+<li>产品角色（Product）：它是包含多个组成部件的复杂对象，由具体建造者来实现其各个零部件的功能，如：单车，包含车架，座位</li>
+<li>抽象建造者类（Builder）：这个接口规定要实现复杂对象的那些部分的创建，并不涉及具体的<br>部件对象的创建，如：创建车架，座位</li>
+<li>具体建造者类（Concrete Builder）：实现 Builder 接口，完成复杂产品的各个部件的具体创建方法。在构造过程完成后，<strong>提供产品的实例</strong>。</li>
+<li>指挥者类（Director）：调用具体建造者来创建复杂对象的各个部分，在指导者中不涉及具体产品的信息，只负责保证对象各部分完整创建或按某种顺序创建。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//产品角色：包含多个组成部件的复杂对象。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bike</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String frame; <span class="comment">//车架</span></span><br><span class="line">    <span class="keyword">private</span> String seat;<span class="comment">// 车座</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getFrame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> frame;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setFrame</span><span class="params">(String frame)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.frame = frame;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSeat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> seat;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSeat</span><span class="params">(String seat)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.seat = seat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//抽象建造者：包含创建产品各个子部件的抽象方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> </span>&#123;</span><br><span class="line">    <span class="comment">//声明bike类型的变量，并进行赋值</span></span><br><span class="line">    <span class="keyword">protected</span> Bike bike = <span class="keyword">new</span> Bike();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">buildFrame</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">buildSeat</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造自行车的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Bike <span class="title">createBike</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//具体建造者(Concrete Builder）：实现 Builder 接口，完成复杂产品的各个部件的具体创建方法。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MobileBuilder</span> <span class="keyword">extends</span> <span class="title">Builder</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildFrame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        bike.setFrame(<span class="string">&quot;碳钎维车架&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildSeat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        bike.setSeat(<span class="string">&quot;真皮车座&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Bike <span class="title">createBike</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> bike;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//具体建造者(Concrete Builder）：实现 Builder 接口，完成复杂产品的各个部件的具体创建方法。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OfoBuilder</span> <span class="keyword">extends</span> <span class="title">Builder</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildFrame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        bike.setFrame(<span class="string">&quot;铝合金车架&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildSeat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        bike.setSeat(<span class="string">&quot;橡胶车座&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Bike <span class="title">createBike</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> bike;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 指挥者：调用建造者中的方法完成复杂对象的创建。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Direactor</span> </span>&#123;</span><br><span class="line">    <span class="comment">//声明builder类型的变量</span></span><br><span class="line">    <span class="keyword">private</span> Builder builder;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Direactor</span><span class="params">(Builder builder)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.builder = builder;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//组装自行车的功能</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Bike <span class="title">construct</span><span class="params">()</span></span>&#123;</span><br><span class="line">        builder.buildFrame();</span><br><span class="line">        builder.buildSeat();</span><br><span class="line">        <span class="keyword">return</span> builder.createBike();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//客户端</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建指挥者对象</span></span><br><span class="line">        Direactor direactor = <span class="keyword">new</span> Direactor(<span class="keyword">new</span> MobileBuilder());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//让指挥者组装自行车</span></span><br><span class="line">        Bike bike = direactor.construct();</span><br><span class="line">        System.out.println(bike.getFrame());</span><br><span class="line">        System.out.println(bike.getSeat());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>创建的对象较复杂，由多个部件构成，各部件面临着复杂的变化，但构件间的建造顺序是稳定的。</p>
+<p>如:摩拜和OfO单车的构建都是同的，但是各位部位又不相同。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Wasim</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://liangweibiao.github.io/2020/04/02/java/%E5%88%9B%E5%BB%BA%E8%80%85%E6%A8%A1%E5%BC%8F/">https://liangweibiao.github.io/2020/04/02/java/%E5%88%9B%E5%BB%BA%E8%80%85%E6%A8%A1%E5%BC%8F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="http://codelwb.top">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post_share"></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/06/01/javaScript/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"><img class="prev-cover" src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/3.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">观察者模式</div></div></a></div><div class="next-post pull-right"><a href="/2020/04/01/java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><img class="next-cover" src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/31.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">设计模式</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wasim</div><div class="author-info__description">Hello,Welcome here 👋</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">114</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">18</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LIANGWEIBIAO"><i class="fab fa-github"></i><span>Follow Me</span></a></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B"><span class="toc-number">1.</span> <span class="toc-text">单例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">工厂模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">为什么要使用工厂模式?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">建造者模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">3.1.</span> <span class="toc-text">使用场景</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/08/05/javaScript/proxy%E4%B8%8Ereflect/" title="Proxy与Reflect"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/29.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Proxy与Reflect"/></a><div class="content"><a class="title" href="/2020/08/05/javaScript/proxy%E4%B8%8Ereflect/" title="Proxy与Reflect">Proxy与Reflect</a><time datetime="2020-08-04T16:00:00.000Z" title="Created 2020-08-05 00:00:00">2020-08-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/08/04/javaScript/typeScript/" title="TypeScript常用语法"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/27.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript常用语法"/></a><div class="content"><a class="title" href="/2020/08/04/javaScript/typeScript/" title="TypeScript常用语法">TypeScript常用语法</a><time datetime="2020-08-03T16:00:00.000Z" title="Created 2020-08-04 00:00:00">2020-08-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/15/java/%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E7%9A%84%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="基于角色的权限控制"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/13.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于角色的权限控制"/></a><div class="content"><a class="title" href="/2020/07/15/java/%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E7%9A%84%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" title="基于角色的权限控制">基于角色的权限控制</a><time datetime="2020-07-14T16:00:00.000Z" title="Created 2020-07-15 00:00:00">2020-07-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/09/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part37-Nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" title="Part37-Nacos配置中心"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part37-Nacos配置中心"/></a><div class="content"><a class="title" href="/2020/07/09/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part37-Nacos%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83/" title="Part37-Nacos配置中心">Part37-Nacos配置中心</a><time datetime="2020-07-08T16:00:00.000Z" title="Created 2020-07-09 00:00:00">2020-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/08/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part36-ECharts%E5%9B%BE%E8%A1%A8/" title="Part36-ECharts图表"><img src="https://gitee.com/liangweibiao/hexo-img/raw/master/deer/45.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Part36-ECharts图表"/></a><div class="content"><a class="title" href="/2020/07/08/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2/Part36-ECharts%E5%9B%BE%E8%A1%A8/" title="Part36-ECharts图表">Part36-ECharts图表</a><time datetime="2020-07-07T16:00:00.000Z" title="Created 2020-07-08 00:00:00">2020-07-08</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2021 By Wasim</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'T40hF307933miUsoEVfnqAYq-gzGzoHsz',
+      appKey: 'lWHf2qtxjEMeGhyP5eMLEOHY',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script>(function(){
+  const bp = document.createElement('script');
+  const curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https'){
+  bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  bp.dataset.pjax = ''
+  const s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})()</script></div></body></html>
